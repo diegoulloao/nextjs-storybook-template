@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main className="bg-gray-300 h-screen">
-        <Button label="Storybook button" primary />
+        <Button label="Storybook button with tailwind" tailwind />
       </main>
     </>
   );

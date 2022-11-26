@@ -1,6 +1,8 @@
+import { useMemo } from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
+  tailwind?: boolean;
   /**
    * Is this the principal call to action on the page?
    */
@@ -28,14 +30,17 @@ interface ButtonProps {
  */
 export const Button = ({
   primary = false,
+  tailwind = false,
   size = "medium",
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? styles["storybook-button--primary"]
-    : styles["storybook-button--secondary"];
+  const mode = useMemo(() => {
+    if (primary) return styles["storybook-button--primary"];
+    if (tailwind) return "bg-red-400 text-white";
+    return styles["storybook-button--secondary"];
+  }, [primary, tailwind]);
 
   return (
     <button
