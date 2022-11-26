@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import styles from "./Button.module.css";
+import styles from "components/Button/Button.module.css";
 
 interface ButtonProps {
   tailwind?: boolean;

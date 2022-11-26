@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Button } from "stories/Button";
+import { Button } from "components/Button";
 
 export default function Home() {
   return (
