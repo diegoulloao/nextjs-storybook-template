@@ -1,5 +1,4 @@
-import { useMemo } from "react";
-import styles from "components/Button/Button.module.css";
+import { useMemo } from 'react';
 
 interface ButtonProps {
   tailwind?: boolean;
@@ -14,7 +13,7 @@ interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: "small" | "medium" | "large";
+  size?: 'sm' | 'md' | 'lg';
   /**
    * Button contents
    */
@@ -31,25 +30,21 @@ interface ButtonProps {
 export const Button = ({
   primary = false,
   tailwind = false,
-  size = "medium",
+  size = 'md',
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
   const mode = useMemo(() => {
-    if (primary) return styles["storybook-button--primary"];
-    if (tailwind) return "bg-red-400 text-white";
-    return styles["storybook-button--secondary"];
+    if (primary) return 'bg-blue-400';
+    if (tailwind) return 'bg-red-400';
+    return 'bg-green-400';
   }, [primary, tailwind]);
 
   return (
     <button
       type="button"
-      className={[
-        styles["storybook-button"],
-        styles[`storybook-button--${size}`],
-        mode,
-      ].join(" ")}
+      className={[mode, `py-2 px-5 text-white rounded-md w-${size}`].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
