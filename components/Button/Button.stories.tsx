@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Button } from "components/Button";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Button } from 'components/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/Button",
+  title: 'Example/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -19,28 +19,28 @@ export const Primary = Template.bind({});
 export const Tailwind = Template.bind({});
 Tailwind.args = {
   tailwind: true,
-  size: "small",
-  label: "Button using tailwind bg-red-400",
+  size: 'sm',
+  label: 'Button using tailwind bg-red-400',
 };
 
 Primary.args = {
   primary: true,
-  label: "Button",
+  label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: "Button",
+  label: 'Button',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  size: "large",
-  label: "Button",
+  size: 'lg',
+  label: 'Button',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  size: "small",
-  label: "Button",
+  size: 'sm',
+  label: 'Button',
 };
